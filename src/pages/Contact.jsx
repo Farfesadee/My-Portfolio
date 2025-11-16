@@ -69,7 +69,7 @@ export default function Contact() {
             </svg>
 
             <a
-              href="https://wa.me/2348100000000"
+              href="https://wa.me/2348101143265"
               target="_blank"
               rel="noreferrer"
               className="hover:underline text-gray-800"

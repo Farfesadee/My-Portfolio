@@ -27,7 +27,7 @@ export default function Hero() {
         {/* LEFT SIDE */}
         <div className="flex-1">
           <h1 className="text-4xl md:text-5xl font-bold">
-            Hi, I'm <span className="text-green-400">Omodolapo Odushile</span>
+            Hi, I'm <span className="text-green-400">Odushile Omodolapo Odunayo</span>
           </h1>
 
           {/* FADE + SLIDE JOB TITLE */}

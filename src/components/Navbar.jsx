@@ -10,7 +10,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-gray-800">
-          Omodolapo
+          Odushile O. Omodolapo
         </Link>
 
         {/* Desktop Links */}
