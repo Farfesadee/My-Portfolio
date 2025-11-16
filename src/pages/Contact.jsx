@@ -18,7 +18,7 @@ export default function Contact() {
 
         {/* Email Button */}
         <a
-          href="mailto:your-email@example.com"
+          href="mailto:odushileomodolapo1995@gmail.com"
           className="inline-flex items-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-800 transition"
         >
           {/* Email SVG */}
@@ -53,7 +53,7 @@ export default function Contact() {
               />
             </svg>
 
-            <span>+234 810 000 0000</span>
+            <span>+234 810 114 3265</span>
           </div>
 
           {/* WhatsApp */}
