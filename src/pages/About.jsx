@@ -19,9 +19,9 @@ export default function About() {
       }, 30);
     };
 
-    animate(setProjects, 25); // Example: 25 projects
+    animate(setProjects, 10); // Example: 25 projects
     animate(setYears, 2);     // Example: 2 years experience
-    animate(setClients, 10);  // Example: 10 clients
+    animate(setClients, 5);  // Example: 10 clients
   }, []);
 
   return (
@@ -66,17 +66,14 @@ export default function About() {
 
   {/* View Resume */}
   <a
-    href="/resume.pdf"
-    target="_blank"
-    className="
-      px-7 py-3 rounded-xl font-semibold
-      bg-green-600 text-white shadow-lg shadow-green-300/40
-      hover:bg-green-700 hover:shadow-green-400/50
-      transition-all duration-300
-    "
-  >
-    View Resume
-  </a>
+  href="https://my-portfolio-lac-nine-73.vercel.app/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-7 py-3 rounded-xl font-semibold bg-green-600 text-white shadow-lg shadow-green-300/40 hover:bg-green-700 hover:shadow-green-400/50 transition-all duration-300"
+>
+  View Resume
+</a>
+
 
   {/* Download Resume */}
   <a
@@ -197,9 +194,9 @@ export default function About() {
           <div className="mt-12 border-l-4 border-green-600 dark:border-green-400 pl-6 space-y-10">
             <div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Full-Stack Developer (Freelance)
+                Full-Stack Developer (Trainee)
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">2023 — Present</p>
+              <p className="text-gray-600 dark:text-gray-300">August 2025 — Present</p>
               <p className="mt-2 text-gray-700 dark:text-gray-300">
                 Built full-stack applications using React, FastAPI, and MySQL; worked with clients to bring ideas to life.
               </p>
@@ -209,7 +206,7 @@ export default function About() {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 Web Developer — Project Based
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">2022 — 2023</p>
+              <p className="text-gray-600 dark:text-gray-300">2025 — Present</p>
               <p className="mt-2 text-gray-700 dark:text-gray-300">
                 Developed websites, dashboards, and digital solutions for small businesses and student programs.
               </p>
@@ -226,9 +223,9 @@ export default function About() {
           <div className="mt-12 space-y-8">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Bachelor of Science — Computer Science
+                Bachelor of Science — Mathematics
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">2021 — Present</p>
+              <p className="text-gray-600 dark:text-gray-300">2018 — 2023</p>
             </div>
           </div>
         </div>

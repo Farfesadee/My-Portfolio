@@ -8,7 +8,7 @@ export default function Footer() {
 
         {/* BRAND */}
         <div>
-          <h2 className="text-xl font-semibold text-white">Omodolapo Odushile</h2>
+          <h2 className="text-xl font-semibold text-white">Odushile O. Omodolapo</h2>
           <p className="mt-3 text-gray-400">
             Full-Stack Web Developer & AI Developer
           </p>
@@ -30,9 +30,9 @@ export default function Footer() {
         {/* CONTACT INFO */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Contact</h3>
-          <p className="text-gray-400">📞 Phone: 08149164807</p>
+          <p className="text-gray-400">📞 Phone: +234-810-114-3265</p>
           <a 
-            href="https://wa.me/2348149164807" 
+            href="https://wa.me/2348101143265" 
             target="_blank" 
             rel="noreferrer"
             className="text-gray-400 hover:text-white block mt-2"
@@ -40,7 +40,7 @@ export default function Footer() {
             💬 WhatsApp
           </a>
           <a 
-            href="mailto:odushileomodola@gmail.com" 
+            href="mailto:odushileomodolapo1995@gmail.com" 
             className="text-gray-400 hover:text-white block mt-2"
           >
             ✉️ Email Me
