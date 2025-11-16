@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeSlide {
+  animation: fadeSlide 2.5s ease-in-out forwards;
+}
+
+
+/* @keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 0px rgba(74, 222, 128, 0.0);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(74, 222, 128, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(74, 222, 128, 0.0);
+  }
+}
+
+.glow {
+  animation: glowPulse 2s ease-in-out infinite;
+} */
+
+/* Typing cursor */
+/* .typing-cursor {
+  border-right: 3px solid #4ade80;
+  padding-right: 3px;
+} */
