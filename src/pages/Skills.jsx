@@ -62,6 +62,8 @@ export default function Skills() {
     "React",
     "JavaScript",
     "TailwindCSS",
+    "CSS",
+    "HTML",
     "Python",
     "FastAPI",
     "MySQL",
@@ -70,9 +72,9 @@ export default function Skills() {
   ];
 
   return (
-    <section className="min-h-screen bg-gray-100 py-20">
+    <section className="min-h-screen bg-gray-900 py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-gray-800 mb-10">
+        <h2 className="text-4xl font-bold text-gray-100 mb-10 ml-40">
           Skills & Technologies
         </h2>
 

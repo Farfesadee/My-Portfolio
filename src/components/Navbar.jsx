@@ -25,7 +25,7 @@ export default function Navbar() {
 
         {/* Hamburger Button (Mobile) */}
         <button 
-          className="md:hidden flex flex-col gap-1.5"
+          className="md:hidden flex flex-col gap-1.5 cursor-pointer"
           onClick={() => setOpen(!open)}
         >
           <div className={`w-6 h-0.5 bg-gray-800 transition ${open ? "rotate-45 translate-y-2" : ""}`}></div>

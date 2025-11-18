@@ -132,162 +132,550 @@
 
 // src/components/Contact.jsx
 
-import React from "react";
+// import React from "react";
+
+// export default function Contact() {
+//   return (
+//     <section id="contact" className="py-20 bg-white">
+//       <div className="max-w-4xl mx-auto px-6 text-center">
+
+//         {/* TITLE */}
+//         <h2 className="text-4xl font-bold text-gray-900 mb-6">Contact</h2>
+
+//         <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+//           Interested in a project, collaboration, or just want to say hello?
+//           You can reach me via email, phone, WhatsApp, or through the form below.
+//         </p>
+
+//         {/* CONTACT FORM */}
+//         <form
+//           onSubmit={(e) => {
+//             e.preventDefault();
+//             alert("Message sent! (Backend not connected yet)");
+//           }}
+//           className="max-w-2xl mx-auto mt-10 space-y-5 text-left"
+//         >
+//           {/* Name */}
+//           <div>
+//             <label className="block text-gray-700 font-medium mb-1">Name</label>
+//             <input
+//               type="text"
+//               required
+//               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+//               placeholder="Your name"
+//             />
+//           </div>
+
+//           {/* Email */}
+//           <div>
+//             <label className="block text-gray-700 font-medium mb-1">Email</label>
+//             <input
+//               type="email"
+//               required
+//               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+//               placeholder="your@email.com"
+//             />
+//           </div>
+
+//           {/* Message */}
+//           <div>
+//             <label className="block text-gray-700 font-medium mb-1">Message</label>
+//             <textarea
+//   required
+//   rows="5"
+//   className="w-full px-4 py-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-gray-900"
+//   placeholder="Type your message..."
+// ></textarea>
+
+//           </div>
+
+//           {/* Submit Button */}
+//           <button
+//             type="submit"
+//             className="w-full bg-gray-900 text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition"
+//           >
+//             Send Message
+//           </button>
+//         </form>
+
+//         {/* CONTACT DETAILS */}
+//         <div className="mt-16 space-y-5 text-lg text-gray-700">
+
+//           {/* Phone */}
+//           <div className="flex justify-center items-center gap-3">
+//             {/* Phone SVG */}
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               className="w-6 h-6 text-gray-900"
+//               fill="none"
+//               viewBox="0 0 24 24"
+//               stroke="currentColor"
+//             >
+//               <path
+//                 strokeWidth="2"
+//                 d="M3 5l2-2 4 4-2 2a12 12 0 006 6l2-2 4 4-2 2c-3.2 1.4-11-6.4-12.4-9.6z"
+//               />
+//             </svg>
+
+//             <a
+//               href="tel:+2348101143265"
+//               className="hover:underline"
+//             >
+//               +234 810 114 3265
+//             </a>
+//           </div>
+
+//           {/* WhatsApp */}
+//           <div className="flex justify-center items-center gap-3">
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               className="w-7 h-7 text-green-600"
+//               viewBox="0 0 32 32"
+//               fill="currentColor"
+//             >
+//               <path d="M16 3a13 13 0 00-11 20l-2 6 6-2A13 13 0 10116 3zm0 4a9 9 0 110 18 9 9 0 010-18zm4.8 11.8c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1c-.2.2-.7.8-.9 1-.2.2-.3.2-.5.1s-1-.4-1.9-1.2c-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.3.1-.5l.7-.8c.1-.2.1-.3 0-.5l-1-2.4c-.2-.6-.4-.6-.6-.6h-.5c-.2 0-.5.1-.7.3s-1 1-1 2.5 1 2.9 1.1 3.1c.1.2 2 3.3 4.9 4.6 2.9 1.4 2.9.9 3.4.8.5-.1 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4z" />
+//             </svg>
+
+//             <a
+//               href="https://wa.me/2348101143265"
+//               target="_blank"
+//               rel="noreferrer"
+//               className="hover:underline text-gray-800"
+//             >
+//               WhatsApp Chat
+//             </a>
+//           </div>
+
+//         </div>
+
+//         {/* SOCIAL LINKS */}
+//         <div className="mt-12 flex justify-center gap-8">
+          
+//           {/* GitHub */}
+//           <a
+//             href="https://github.com/Farfesadee/My_React"
+//             target="_blank"
+//             rel="noreferrer"
+//             className="text-gray-700 hover:text-gray-900 transition"
+//           >
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               className="w-8 h-8"
+//               viewBox="0 0 24 24"
+//               fill="currentColor"
+//             >
+//               <path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 008 11c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.7.8 1.7.8 2 .3 3.4-.7 3.4-.7-.1-.8-.2-1.4-.2-1.4-2.3-.3-4.7-1.2-4.7-5.4 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 1.1a9.6 9.6 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.2-2.4 5.1-4.7 5.4 0 .1-.1.7-.2 1.4 0 0 1.4 1 3.4.7 0 0 .7-.7 1.7-.8 0 0 .6-1 1.7-1.1 0 0 1.1 0 .1.7 0 0-.7.4-1.2 1.6 0 0-.7 2.3-4 1.6v2c0 .4.2.7.8.6a11.5 11.5 0 008-11c0-6.3-5.2-11.5-11.5-11.5z" />
+//             </svg>
+//           </a>
+
+//           {/* LinkedIn */}
+//           <a
+//             href="https://www.linkedin.com/in/omodolapo-odushile-8a9494383"
+//             target="_blank"
+//             rel="noreferrer"
+//             className="text-gray-700 hover:text-gray-900 transition"
+//           >
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               className="w-8 h-8"
+//               fill="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 7h4V24h-4V7zm7 0h4v2.4h.1c.6-1.2 2-2.4 4.2-2.4 4.5 0 5.3 3 5.3 6.9V24h-4V14.4c0-2.3 0-5.3-3.2-5.3-3.2 0-3.7 2.5-3.7 5.1V24h-4V7z" />
+//             </svg>
+//           </a>
+
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+
+// export default function Contact() { 
+//   const handleSubmit = async (e) => { 
+//     e.preventDefault(); 
+    
+//     const form = new FormData(e.target); 
+//     const data = { 
+//       name: form.get("name"), 
+//       email: form.get("email"), 
+//       message: form.get("message"), 
+//     }; 
+//     const response = await fetch("http://127.0.0.1:8000/contact", { 
+//       method: "POST", 
+//       headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify(data),
+// }); 
+
+// const result = await response.json();
+// alert(result.message);
+
+// e.target.reset();
+// }; 
+
+// return ( 
+// <section id="contact" className="py-20 bg-white">
+//   <div className="max-w-4xl mx-auto px-6 text-center">
+
+//     {/* TITLE */}
+//     <h2 className="text-4xl font-bold text-gray-900 mb-6">Contact</h2>
+
+//     <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+//       Interested in a project, collaboration, or just want to say hello?
+//       You can reach me via email, phone, WhatsApp, or through the form below.
+//     </p>
+
+//     {/* CONTACT FORM */}
+//     <form
+//       onSubmit={handleSubmit}
+//       className="space-y-4 mt-8 max-w-xl mx-auto text-left"
+//     >
+//       <input
+//         type="text"
+//         name="name"
+//         required
+//         placeholder="Your Name"
+//         className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+//       />
+
+//       <input
+//         type="email"
+//         name="email"
+//         required
+//         placeholder="Your Email"
+//         className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+//       />
+
+//       <textarea
+//         name="message"
+//         rows="5"
+//         required
+//         placeholder="Your Message"
+//         className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 resize-none"
+//       />
+
+//       <button
+//         type="submit"
+//         className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold"
+//       >
+//         Send Message
+//       </button>
+//     </form>
+
+//     {/* CONTACT DETAILS */}
+//     <div className="mt-16 space-y-5 text-lg text-gray-700">
+
+//       {/* Phone */}
+//       <div className="flex justify-center items-center gap-3">
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           className="w-6 h-6 text-gray-900"
+//           fill="none"
+//           viewBox="0 0 24 24"
+//           stroke="currentColor"
+//         >
+//           <path
+//             strokeWidth="2"
+//             d="M3 5l2-2 4 4-2 2a12 12 0 006 6l2-2 4 4-2 2c-3.2 1.4-11-6.4-12.4-9.6z"
+//           />
+//         </svg>
+
+//         <a href="tel:+2348101143265" className="hover:underline">
+//           +234 810 114 3265
+//         </a>
+//       </div>
+
+//       {/* WhatsApp */}
+//       <div className="flex justify-center items-center gap-3">
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           className="w-7 h-7 text-green-600"
+//           viewBox="0 0 32 32"
+//           fill="currentColor"
+//         >
+//           <path d="M16 3a13 13 0 00-11 20l-2 6 6-2A13 13 0 10116 3zm0 4a9 9 0 110 18 9 9 0 010-18zm4.8 11.8c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1c-.2.2-.7.8-.9 1-.2.2-.3.2-.5.1s-1-.4-1.9-1.2c-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.3.1-.5l.7-.8c.1-.2.1-.3 0-.5l-1-2.4c-.2-.6-.4-.6-.6-.6h-.5c-.2 0-.5.1-.7.3s-1 1-1 2.5 1 2.9 1.1 3.1c.1.2 2 3.3 4.9 4.6 2.9 1.4 2.9.9 3.4.8.5-.1 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4z" />
+//         </svg>
+
+//         <a
+//           href="https://wa.me/2348101143265"
+//           target="_blank"
+//           rel="noreferrer"
+//           className="hover:underline text-gray-800"
+//         >
+//           WhatsApp Chat
+//         </a>
+//       </div>
+//     </div>
+
+//     {/* SOCIAL LINKS */}
+//     <div className="mt-12 flex justify-center gap-8">
+      
+//       {/* GitHub */}
+//       <a
+//         href="https://github.com/Farfesadee/My_React"
+//         target="_blank"
+//         rel="noreferrer"
+//         className="text-gray-700 hover:text-gray-900 transition"
+//       >
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           className="w-8 h-8"
+//           viewBox="0 0 24 24"
+//           fill="currentColor"
+//         >
+//           <path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 008 11c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.7.8 1.7.8 2 .3 3.4-.7 3.4-.7-.1-.8-.2-1.4-.2-1.4-2.3-.3-4.7-1.2-4.7-5.4 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 1.1a9.6 9.6 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.2-2.4 5.1-4.7 5.4 0 .1-.1.7-.2 1.4 0 0 1.4 1 3.4.7 0 0 .7-.7 1.7-.8 0 0 .6-1 1.7-1.1 0 0 1.1 0 .1.7 0 0-.7.4-1.2 1.6 0 0-.7 2.3-4 1.6v2c0 .4.2.7.8.6a11.5 11.5 0 008-11c0-6.3-5.2-11.5-11.5-11.5z" />
+//         </svg>
+//       </a>
+
+//       {/* LinkedIn */}
+//       <a
+//         href="https://www.linkedin.com/in/omodolapo-odushile-8a9494383"
+//         target="_blank"
+//         rel="noreferrer"
+//         className="text-gray-700 hover:text-gray-900 transition"
+//       >
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           className="w-8 h-8"
+//           fill="currentColor"
+//           viewBox="0 0 24 24"
+//         >
+//           <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 7h4V24h-4V7zm7 0h4v2.4h.1c.6-1.2 2-2.4 4.2-2.4 4.5 0 5.3 3 5.3 6.9V24h-4V14.4c0-2.3 0-5.3-3.2-5.3-3.2 0-3.7 2.5-3.7 5.1V24h-4V7z" />
+//         </svg>
+//       </a>
+//     </div>
+
+//   </div>
+// </section>
+// );
+// }
+
+
+
+
+
+
+import React, { useState } from "react";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (loading) return; // prevent double submissions
+    setLoading(true);
+
+
+    const form = new FormData(e.target);
+    const data = {
+      name: form.get("name"),
+      email: form.get("email"),
+      message: form.get("message"),
+      latitude: null,
+      longitude: null,
+    };
+
+    // Try to get user's location
+  if (navigator.geolocation) {
+    try {
+      await new Promise((resolve) => {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            data.latitude = position.coords.latitude;
+            data.longitude = position.coords.longitude;
+            resolve();
+          },
+          () => resolve() // user denied or unavailable
+        );
+      });
+    } catch (err) {
+      console.warn("Geolocation error:", err);
+    }
+  }
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert(result.message);
+        e.target.reset();
+      } else {
+        alert("Error: " + (result.detail || "Something went wrong"));
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Server error, try again later.");
+    }
+    setLoading(false);
+  };
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-6 text-center">
-
-        {/* TITLE */}
         <h2 className="text-4xl font-bold text-gray-900 mb-6">Contact</h2>
-
         <p className="text-gray-600 max-w-2xl mx-auto mb-10">
           Interested in a project, collaboration, or just want to say hello?
           You can reach me via email, phone, WhatsApp, or through the form below.
         </p>
-
-        {/* CONTACT FORM */}
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("Message sent! (Backend not connected yet)");
-          }}
-          className="max-w-2xl mx-auto mt-10 space-y-5 text-left"
+          onSubmit={handleSubmit}
+          className="space-y-4 mt-8 max-w-xl mx-auto text-left"
         >
-          {/* Name */}
-          <div>
-            <label className="block text-gray-700 font-medium mb-1">Name</label>
-            <input
-              type="text"
-              required
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-              placeholder="Your name"
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-            <label className="block text-gray-700 font-medium mb-1">Email</label>
-            <input
-              type="email"
-              required
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
-              placeholder="your@email.com"
-            />
-          </div>
-
-          {/* Message */}
-          <div>
-            <label className="block text-gray-700 font-medium mb-1">Message</label>
-            <textarea
-  required
-  rows="5"
-  className="w-full px-4 py-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-gray-900"
-  placeholder="Type your message..."
-></textarea>
-
-          </div>
-
-          {/* Submit Button */}
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Your Name"
+            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+          />
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your Email"
+            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+          />
+          <textarea
+            name="message"
+            rows="5"
+            required
+            placeholder="Your Message"
+            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 resize-none"
+          />
           <button
             type="submit"
-            className="w-full bg-gray-900 text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition"
+            disabled={loading}
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold cursor-pointer"
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
 
-        {/* CONTACT DETAILS */}
+
+        {/* Optional: Contact Details & Social Links */}
+        {/* ...keep your phone, WhatsApp, GitHub, LinkedIn sections here... */}
+
+
+        {/* CONTACT DETAILS */} 
         <div className="mt-16 space-y-5 text-lg text-gray-700">
+ 
+ {/* Phone */} 
+<div className="flex justify-center items-center gap-3"> 
+  <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6 text-gray-900"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeWidth="2"
+            d="M3 5l2-2 4 4-2 2a12 12 0 006 6l2-2 4 4-2 2c-3.2 1.4-11-6.4-12.4-9.6z"
+          />
+        </svg>
 
-          {/* Phone */}
-          <div className="flex justify-center items-center gap-3">
-            {/* Phone SVG */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-gray-900"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeWidth="2"
-                d="M3 5l2-2 4 4-2 2a12 12 0 006 6l2-2 4 4-2 2c-3.2 1.4-11-6.4-12.4-9.6z"
-              />
-            </svg>
+        <a href="tel:+2348101143265" className="hover:underline">
+          +234 810 114 3265
+        </a>
+      </div>
 
-            <a
-              href="tel:+2348101143265"
-              className="hover:underline"
-            >
-              +234 810 114 3265
-            </a>
-          </div>
+      {/* WhatsApp */}
+      <div className="flex justify-center items-center gap-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-7 h-7 text-green-600"
+          viewBox="0 0 32 32"
+          fill="currentColor"
+        >
+          <path d="M16 3a13 13 0 00-11 20l-2 6 6-2A13 13 0 10116 3zm0 4a9 9 0 110 18 9 9 0 010-18zm4.8 11.8c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1c-.2.2-.7.8-.9 1-.2.2-.3.2-.5.1s-1-.4-1.9-1.2c-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.3.1-.5l.7-.8c.1-.2.1-.3 0-.5l-1-2.4c-.2-.6-.4-.6-.6-.6h-.5c-.2 0-.5.1-.7.3s-1 1-1 2.5 1 2.9 1.1 3.1c.1.2 2 3.3 4.9 4.6 2.9 1.4 2.9.9 3.4.8.5-.1 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4z" />
+        </svg>
 
-          {/* WhatsApp */}
-          <div className="flex justify-center items-center gap-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-7 h-7 text-green-600"
-              viewBox="0 0 32 32"
-              fill="currentColor"
-            >
-              <path d="M16 3a13 13 0 00-11 20l-2 6 6-2A13 13 0 10116 3zm0 4a9 9 0 110 18 9 9 0 010-18zm4.8 11.8c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1c-.2.2-.7.8-.9 1-.2.2-.3.2-.5.1s-1-.4-1.9-1.2c-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.3.1-.5l.7-.8c.1-.2.1-.3 0-.5l-1-2.4c-.2-.6-.4-.6-.6-.6h-.5c-.2 0-.5.1-.7.3s-1 1-1 2.5 1 2.9 1.1 3.1c.1.2 2 3.3 4.9 4.6 2.9 1.4 2.9.9 3.4.8.5-.1 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4z" />
-            </svg>
+        <a
+          href="https://wa.me/2348101143265"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:underline text-gray-800"
+        >
+          WhatsApp Chat
+        </a>
+      </div>
+    </div>
 
-            <a
-              href="https://wa.me/2348101143265"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline text-gray-800"
-            >
-              WhatsApp Chat
-            </a>
-          </div>
+    {/* SOCIAL LINKS */}
+    <div className="mt-12 flex justify-center gap-8">
+      
+      {/* GitHub */}
+      <a
+        href="https://github.com/Farfesadee/My_React"
+        target="_blank"
+        rel="noreferrer"
+        className="text-gray-700 hover:text-gray-900 transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 008 11c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.7.8 1.7.8 2 .3 3.4-.7 3.4-.7-.1-.8-.2-1.4-.2-1.4-2.3-.3-4.7-1.2-4.7-5.4 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 1.1a9.6 9.6 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.2-2.4 5.1-4.7 5.4 0 .1-.1.7-.2 1.4 0 0 1.4 1 3.4.7 0 0 .7-.7 1.7-.8 0 0 .6-1 1.7-1.1 0 0 1.1 0 .1.7 0 0-.7.4-1.2 1.6 0 0-.7 2.3-4 1.6v2c0 .4.2.7.8.6a11.5 11.5 0 008-11c0-6.3-5.2-11.5-11.5-11.5z" />
+        </svg>
+      </a>
 
-        </div>
+      {/* LinkedIn */}
+      <a
+        href="https://www.linkedin.com/in/omodolapo-odushile-8a9494383"
+        target="_blank"
+        rel="noreferrer"
+        className="text-gray-700 hover:text-gray-900 transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 7h4V24h-4V7zm7 0h4v2.4h.1c.6-1.2 2-2.4 4.2-2.4 4.5 0 5.3 3 5.3 6.9V24h-4V14.4c0-2.3 0-5.3-3.2-5.3-3.2 0-3.7 2.5-3.7 5.1V24h-4V7z" />
+        </svg>
+      </a>
+    </div>
 
-        {/* SOCIAL LINKS */}
-        <div className="mt-12 flex justify-center gap-8">
-          
-          {/* GitHub */}
-          <a
-            href="https://github.com/Farfesadee/My_React"
-            target="_blank"
-            rel="noreferrer"
-            className="text-gray-700 hover:text-gray-900 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 008 11c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.7.8 1.7.8 2 .3 3.4-.7 3.4-.7-.1-.8-.2-1.4-.2-1.4-2.3-.3-4.7-1.2-4.7-5.4 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 1.1a9.6 9.6 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.2-2.4 5.1-4.7 5.4 0 .1-.1.7-.2 1.4 0 0 1.4 1 3.4.7 0 0 .7-.7 1.7-.8 0 0 .6-1 1.7-1.1 0 0 1.1 0 .1.7 0 0-.7.4-1.2 1.6 0 0-.7 2.3-4 1.6v2c0 .4.2.7.8.6a11.5 11.5 0 008-11c0-6.3-5.2-11.5-11.5-11.5z" />
-            </svg>
-          </a>
+        
 
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/omodolapo-odushile-8a9494383"
-            target="_blank"
-            rel="noreferrer"
-            className="text-gray-700 hover:text-gray-900 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 7h4V24h-4V7zm7 0h4v2.4h.1c.6-1.2 2-2.4 4.2-2.4 4.5 0 5.3 3 5.3 6.9V24h-4V14.4c0-2.3 0-5.3-3.2-5.3-3.2 0-3.7 2.5-3.7 5.1V24h-4V7z" />
-            </svg>
-          </a>
 
-        </div>
+
 
       </div>
     </section>
   );
 }
+
+
+
+
+
+
+
+

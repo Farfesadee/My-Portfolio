@@ -22,7 +22,7 @@ export default function Footer() {
             <li><Link to="/about" className="hover:text-white">About</Link></li>
             <li><Link to="/skills" className="hover:text-white">Skills</Link></li>
             <li><Link to="/projects" className="hover:text-white">Projects</Link></li>
-            <li><Link to="/experience" className="hover:text-white">Experience</Link></li>
+            {/* <li><Link to="/experience" className="hover:text-white">Experience</Link></li> */}
             <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
           </ul>
         </div>
@@ -55,7 +55,7 @@ export default function Footer() {
         {/* Back to top button */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="absolute right-6 -top-4 bg-white text-gray-900 px-3 py-1 rounded shadow hover:bg-gray-200"
+          className="absolute right-6 -top-4 bg-white text-gray-900 px-3 py-1 rounded shadow hover:bg-gray-200 cursor-pointer"
         >
           ↑ Top
         </button>

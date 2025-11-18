@@ -25,11 +25,11 @@ export default function About() {
   }, []);
 
   return (
-    <section className="py-24 bg-gray-100 dark:bg-gray-900">
+    <section className="py-24 bg-gray-900 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* PAGE HEADER */}
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+        <h1 className="text-4xl font-bold text-white dark:text-white mb-12 text-center">
           About Me
         </h1>
 
@@ -46,17 +46,17 @@ export default function About() {
 
           {/* INTRO TEXT */}
           <div className="flex-1">
-            <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-semibold text-white dark:text-white">
               I'm Omodolapo Odunayo Odushile
             </h2>
 
-            <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="mt-4 text-white dark:text-gray-300 leading-relaxed">
               I am a Full-Stack Developer & AI/ML Developer passionate about building 
               clean, scalable, and intelligent software solutions. I work with modern 
               tools like <span className="text-green-600 dark:text-green-400 font-medium">React, TailwindCSS, Python, FastAPI, and MySQL</span> to deliver seamless user experiences backed by reliable backend systems.
             </p>
 
-            <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="mt-4 text-white dark:text-gray-300 leading-relaxed">
               My work includes static websites, database systems, authentication 
               platforms, AI-powered applications, and full-stack products used by real clients.
             </p>
@@ -96,7 +96,7 @@ export default function About() {
   to="/contact"
   className="
     ml-22 px-7 py-3 rounded-xl font-semibold
-    bg-gray-900 dark:bg-gray-700 text-white
+    bg-gray-700 dark:bg-gray-700 text-white
     hover:bg-gray-800 dark:hover:bg-gray-600
     shadow-lg shadow-gray-400/30 dark:shadow-black/20
     transition-all duration-300
@@ -129,7 +129,7 @@ export default function About() {
 
         {/* VALUES SECTION */}
         <div className="mt-24">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center">
+          <h2 className="text-3xl font-bold text-white dark:text-white text-center">
             My Values
           </h2>
 
@@ -163,7 +163,7 @@ export default function About() {
 
         {/* WORKFLOW */}
         <div className="mt-24">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center">
+          <h2 className="text-3xl font-bold text-white dark:text-white text-center">
             My Workflow
           </h2>
 
@@ -187,27 +187,27 @@ export default function About() {
 
         {/* EXPERIENCE TIMELINE */}
         <div className="mt-24">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center">
+          <h2 className="text-3xl font-bold text-white dark:text-white text-center">
             Experience
           </h2>
 
           <div className="mt-12 border-l-4 border-green-600 dark:border-green-400 pl-6 space-y-10">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-xl font-semibold text-white dark:text-white">
                 Full-Stack Developer (Trainee)
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">August 2025 — Present</p>
-              <p className="mt-2 text-gray-700 dark:text-gray-300">
+              <p className="text-gray-100 dark:text-gray-300">August 2025 — Present</p>
+              <p className="mt-2 text-gray-100 dark:text-gray-300">
                 Built full-stack applications using React, FastAPI, and MySQL; worked with clients to bring ideas to life.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-xl font-semibold text-gray-100 dark:text-white">
                 Web Developer — Project Based
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">2025 — Present</p>
-              <p className="mt-2 text-gray-700 dark:text-gray-300">
+              <p className="text-gray-100 dark:text-gray-300">2025 — Present</p>
+              <p className="mt-2 text-gray-100 dark:text-gray-300">
                 Developed websites, dashboards, and digital solutions for small businesses and student programs.
               </p>
             </div>
@@ -216,14 +216,14 @@ export default function About() {
 
         {/* EDUCATION */}
         <div className="mt-24">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center">
+          <h2 className="text-3xl font-bold text-white dark:text-white text-center">
             Education
           </h2>
 
           <div className="mt-12 space-y-8">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Bachelor of Science — Mathematics
+                Bachelor of Science [B.Sc.(Ed.)] — Mathematics
               </h3>
               <p className="text-gray-600 dark:text-gray-300">2018 — 2023</p>
             </div>
@@ -232,7 +232,7 @@ export default function About() {
 
         {/* CERTIFICATIONS */}
         <div className="mt-24 pb-10">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center">
+          <h2 className="text-3xl font-bold text-gray-100 dark:text-white text-center">
             Certifications
           </h2>
 

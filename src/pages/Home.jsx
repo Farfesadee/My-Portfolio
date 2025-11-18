@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   const titles = [
+    "AI Developer",
     "Full-Stack Web Developer",
-    "Frontend Engineer (React)",
+    "Frontend Engineer (React, TailwindCSS)",
     "Backend Developer (FastAPI)",
-    "AI & Python Developer",
+    "Software Developer",
   ];
 
   const [index, setIndex] = useState(0);

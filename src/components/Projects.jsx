@@ -26,7 +26,7 @@ const projects = [
     title: "Python Calculator",
     desc: "A simple Python calculator that performs basic operations.",
     tech: ["Python"],
-    github: "",
+    github: "https://github.com/Eleventh-landlord/Foodie.git",
     img: "https://via.placeholder.com/720x420.png?text=Python+Calculator",
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     title: "Expense Tracker (Fullstack)",
     desc: "Auth-protected tracker synced with FastAPI + MySQL backend.",
     tech: ["React", "FastAPI", "MySQL"],
-    github: "",
+    github: "https://github.com/Eleventh-landlord/Foodie.git",
     img: "https://via.placeholder.com/720x420.png?text=Expense+Tracker+Fullstack",
   },
   {
@@ -74,7 +74,7 @@ const projects = [
     title: "Facebook Clone",
     desc: "Full-stack social app with signup, login & posting features.",
     tech: ["React", "FastAPI", "MySQL"],
-    github: "",
+    github: "https://github.com/Farfesadee/SayNoToDrugAbuse.git",
     img: "https://via.placeholder.com/720x420.png?text=Facebook+Clone",
   },
   {
@@ -82,7 +82,7 @@ const projects = [
     title: "Nigerian State App",
     desc: "Add, view, edit, delete states; backend with auth & state routes.",
     tech: ["React Router", "FastAPI", "MySQL"],
-    github: "",
+    github: "https://github.com/Farfesadee/SayNoToDrugAbuse.git",
     img: "https://via.placeholder.com/720x420.png?text=Nigerian+State+App",
   },
   {
@@ -113,9 +113,9 @@ export default function Projects() {
   const goNext = () => setIndex((i) => (i === length - 1 ? 0 : i + 1));
 
   return (
-    <section className="py-20 bg-gray-100 min-h-screen">
+    <section className="py-20 bg-gray-900 min-h-screen">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-gray-800 mb-8">Projects</h2>
+        <h2 className="text-4xl font-bold text-gray-100 mb-8">Projects</h2>
 
         {/* Slider */}
         <div className="relative overflow-hidden rounded-xl bg-white shadow-lg">
