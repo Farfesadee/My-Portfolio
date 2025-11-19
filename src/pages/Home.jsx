@@ -6,7 +6,7 @@ export default function Hero() {
   const titles = [
     "AI Developer",
     "Full-Stack Web Developer",
-    "Frontend Engineer (React, TailwindCSS)",
+    "Frontend Engineer (React)",
     "Backend Developer (FastAPI)",
     "Software Developer",
   ];
@@ -16,7 +16,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % titles.length);
-    }, 2500); // change title every 2.5 seconds
+    }, 3000); // change title every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -73,7 +73,7 @@ export default function Hero() {
           <img
             src={profile}
             alt="Profile"
-            className="w-72 h-72 object-cover rounded-full border border-gray-700 shadow-xl"
+            className="w-72 h-78 object-cover rounded-full border border-gray-700 shadow-xl"
           />
         </div>
 

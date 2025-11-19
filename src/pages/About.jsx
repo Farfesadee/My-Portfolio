@@ -40,7 +40,7 @@ export default function About() {
             <img
               src={profile}
               alt="Profile"
-              className="w-72 h-72 object-cover rounded-xl shadow-lg border border-gray-300 dark:border-gray-700"
+              className="w-72 h-78 object-cover rounded-xl shadow-lg border border-gray-300 dark:border-gray-700"
             />
           </div>
 
@@ -95,9 +95,9 @@ export default function About() {
  <Link
   to="/contact"
   className="
-    ml-22 px-7 py-3 rounded-xl font-semibold
-    bg-gray-700 dark:bg-gray-700 text-white
-    hover:bg-gray-800 dark:hover:bg-gray-600
+    ml-1 px-7 py-3 rounded-xl font-semibold
+    bg-green-600 dark:bg-gray-700 text-white
+    hover:bg-green-800 dark:hover:bg-gray-600
     shadow-lg shadow-gray-400/30 dark:shadow-black/20
     transition-all duration-300
   "
