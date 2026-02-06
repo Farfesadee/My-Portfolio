@@ -68,6 +68,7 @@ export default function Skills() {
     "FastAPI",
     "MySQL",
     "AI / ML",
+    // "AI / ML",
     "Git & GitHub",
   ];
 

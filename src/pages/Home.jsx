@@ -70,11 +70,15 @@ export default function Hero() {
 
         {/* RIGHT SIDE — IMAGE */}
         <div className="flex justify-center md:justify-end flex-1">
-          <img
-            src={profile}
-            alt="Profile"
-            className="w-72 h-78 object-cover rounded-full border border-gray-700 shadow-xl"
-          />
+          <div className="p-1.5 rounded-[28px] bg-gradient-to-br from-slate-200/80 via-white/40 to-slate-400/30 shadow-2xl">
+            <div className="bg-slate-900/40 rounded-[26px] p-2">
+              <img
+                src={profile}
+                alt="Professional headshot"
+                className="w-72 h-80 object-cover object-top rounded-[22px] ring-1 ring-white/20 shadow-lg"
+              />
+            </div>
+          </div>
         </div>
 
       </div>

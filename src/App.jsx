@@ -7,6 +7,7 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import About from "./pages/About";   // <-- Add this
 import Projects from "./pages/Projects"; // If Projects is a page
+import Admin from "./pages/Admin";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />   {/* <-- Add this */}
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
 
       <Footer />
