@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";   // <-- Add this
 import Projects from "./pages/Projects"; // If Projects is a page
 import Admin from "./pages/Admin";
+import ChatbotWidget from "./components/ChatbotWidget";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <ChatbotWidget />
     </Router>
   );
 }
