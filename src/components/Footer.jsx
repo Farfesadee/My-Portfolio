@@ -29,7 +29,7 @@ export default function Footer() {
           {/* BRAND */}
           <div>
             <h2 className="text-xl font-bold text-white">
-              Odushile<span className="text-green-400">.</span>
+              Odushile Omodolapo<span className="text-green-400">.</span>
             </h2>
             <p className="mt-3 text-gray-400 leading-relaxed">
               Full-Stack Web Developer & AI Developer.<br />
