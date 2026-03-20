@@ -2,9 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { SYSTEM_PROMPT } from "../data/knowledgeBase";
 import { useProjects } from "../hooks/useProjects";
 
-// ─── Groq config ──────────────────────────────────────────────────────────────
-const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
-const GROQ_MODEL = "llama-3.3-70b-versatile";
+// ─── Backend API base URL ─────────────────────────────────────────────────────
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
 // ─── Starter suggestions ──────────────────────────────────────────────────────
 const STARTER_QUESTIONS = [
@@ -135,59 +134,32 @@ export default function ChatbotWidget() {
     setMessages(newMessages);
     setLoading(true);
 
-    const apiKey = import.meta.env.VITE_GROQ_API_KEY;
-    if (!apiKey || apiKey === "your_groq_api_key_here") {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content:
-            "⚠️ The chatbot API key isn't configured yet. Please contact Omodolapo directly through the Contact page or on LinkedIn!",
-        },
-      ]);
-      setLoading(false);
-      return;
-    }
-
     try {
-      const response = await fetch(GROQ_API_URL, {
+      const response = await fetch(`${API_BASE_URL}/chat`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: GROQ_MODEL,
-          messages: [
-            { role: "system", content: buildSystemPrompt() },
-            // Send last 8 messages for context (keeps cost low)
-            ...newMessages.slice(-8),
-          ],
-          temperature: 0.6,
-          max_tokens: 500,
+          messages: newMessages.slice(-8),
+          system_prompt: buildSystemPrompt(),
         }),
       });
 
       if (!response.ok) {
         const errData = await response.json().catch(() => ({}));
-        throw new Error(errData?.error?.message || `API error ${response.status}`);
+        throw new Error(errData?.detail || `Server error ${response.status}`);
       }
 
       const data = await response.json();
-      const reply =
-        data.choices?.[0]?.message?.content?.trim() ||
-        "I'm not sure how to answer that. Please reach out via the Contact page!";
-
+      const reply = data.reply || "I'm not sure how to answer that. Please reach out via the Contact page!";
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch (err) {
-      console.error("Groq error:", err);
+      console.error("Chat error:", err);
       setError("Something went wrong. Please try again.");
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "Sorry, I ran into an issue. You can also reach Omodolapo directly via the Contact page.",
+          content: "Sorry, I ran into an issue. You can also reach Omodolapo directly via the Contact page.",
         },
       ]);
     } finally {
