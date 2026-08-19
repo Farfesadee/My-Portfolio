@@ -29,7 +29,7 @@ const ResetIcon = () => (
 );
 
 // ─── Admin password (simple frontend gate) ───────────────────────────────────
-const ADMIN_PASSWORD = "admin123"; // Change this to your preferred password
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || "admin123";
 
 // ─── Empty form state ─────────────────────────────────────────────────────────
 const emptyForm = {
@@ -43,6 +43,25 @@ const emptyForm = {
   features: "",
   highlights: "",
 };
+
+// ─── Form field (declared outside modal to avoid re-creation per render) ─────
+function Field({ label, name, type = "text", placeholder, required, value, error, onChange }) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-300 mb-1.5">
+        {label} {required && <span className="text-red-400">*</span>}
+      </label>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(name, e.target.value)}
+        placeholder={placeholder}
+        className={`w-full bg-gray-700/60 border ${error ? "border-red-500" : "border-gray-600"} text-white placeholder-gray-500 rounded-lg px-4 py-2.5 focus:outline-none focus:border-green-500 transition-colors`}
+      />
+      {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
+    </div>
+  );
+}
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
 function ProjectModal({ mode, project, onSave, onClose }) {
@@ -82,21 +101,10 @@ function ProjectModal({ mode, project, onSave, onClose }) {
     onSave(form);
   };
 
-  const Field = ({ label, name, type = "text", placeholder, required }) => (
-    <div>
-      <label className="block text-sm font-medium text-gray-300 mb-1.5">
-        {label} {required && <span className="text-red-400">*</span>}
-      </label>
-      <input
-        type={type}
-        value={form[name]}
-        onChange={(e) => { setForm({ ...form, [name]: e.target.value }); setErrors({ ...errors, [name]: "" }); }}
-        placeholder={placeholder}
-        className={`w-full bg-gray-700/60 border ${errors[name] ? "border-red-500" : "border-gray-600"} text-white placeholder-gray-500 rounded-lg px-4 py-2.5 focus:outline-none focus:border-green-500 transition-colors`}
-      />
-      {errors[name] && <p className="text-red-400 text-xs mt-1">{errors[name]}</p>}
-    </div>
-  );
+  const handleFieldChange = (name, value) => {
+    setForm({ ...form, [name]: value });
+    setErrors({ ...errors, [name]: "" });
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
@@ -110,8 +118,8 @@ function ProjectModal({ mode, project, onSave, onClose }) {
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div className="grid md:grid-cols-2 gap-4">
-            <Field label="Project Title" name="title" placeholder="e.g. My Awesome App" required />
-            <Field label="Technologies" name="tech" placeholder="React, FastAPI, MySQL" required />
+            <Field label="Project Title" name="title" placeholder="e.g. My Awesome App" required value={form.title} error={errors.title} onChange={handleFieldChange} />
+            <Field label="Technologies" name="tech" placeholder="React, FastAPI, MySQL" required value={form.tech} error={errors.tech} onChange={handleFieldChange} />
           </div>
 
           <div>
@@ -129,11 +137,11 @@ function ProjectModal({ mode, project, onSave, onClose }) {
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <Field label="GitHub Repo URL" name="repo_url" placeholder="https://github.com/..." />
-            <Field label="Live URL (optional)" name="live_url" placeholder="https://yourproject.com" />
+            <Field label="GitHub Repo URL" name="repo_url" placeholder="https://github.com/..." value={form.repo_url} error={errors.repo_url} onChange={handleFieldChange} />
+            <Field label="Live URL (optional)" name="live_url" placeholder="https://yourproject.com" value={form.live_url} error={errors.live_url} onChange={handleFieldChange} />
           </div>
 
-          <Field label="Image URL (optional)" name="img" placeholder="https://... or leave blank" />
+          <Field label="Image URL (optional)" name="img" placeholder="https://... or leave blank" value={form.img} error={errors.img} onChange={handleFieldChange} />
 
           <div className="border-t border-gray-700 pt-4">
             <p className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Project README Details</p>
@@ -388,9 +396,7 @@ export default function Admin() {
             >
               Sign In
             </button>
-            <p className="text-center text-xs text-gray-600 mt-4">
-              Default password: <code className="text-gray-400">admin123</code>
-            </p>
+
           </form>
         </div>
       </div>

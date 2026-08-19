@@ -30,15 +30,15 @@ export default function Projects() {
     return () => clearTimeout(timeoutRef.current);
   }, [index, length]);
 
-  // Reset index when category changes or projects change
-  useEffect(() => {
+  // Reset index when the project list changes
+  const [prevProjectCount, setPrevProjectCount] = useState(projects.length);
+  if (prevProjectCount !== projects.length) {
+    setPrevProjectCount(projects.length);
     setIndex(0);
-  }, [activeCategory, projects.length]);
+  }
 
   const goPrev = () => setIndex((i) => (i === 0 ? length - 1 : i - 1));
   const goNext = () => setIndex((i) => (i === length - 1 ? 0 : i + 1));
-
-  const current = filteredProjects[index];
 
   return (
     <section className="py-24 bg-gray-900 min-h-screen">

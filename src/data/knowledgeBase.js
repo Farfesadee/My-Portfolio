@@ -36,7 +36,7 @@ export const KNOWLEDGE_BASE = `
 ## Projects Built (10 total)
 
 1. **Foodie** — Responsive restaurant landing page. Stack: HTML, CSS. Demonstrates layout accuracy and responsiveness.
-2. **Python Calculator** — Command-line calculator. Stack: Python. Shows Python fundamentals.
+2. **MathGenius** — AI-powered Mathematics Learning Platform for Nigerian Exam Prep. Stack: React, FastAPI, Supabase, Groq AI, SymPy, Python. Features AI solver, AI tutor, CBT mode, past questions, gamification, and RAG-powered textbook grounding.
 3. **FreshBite Cafe** — Digital menu system. Stack: HTML, CSS, JavaScript. Demonstrates DOM manipulation.
 4. **Library Management System** — Browser-based book management. Stack: HTML, CSS, JavaScript. Shows CRUD logic.
 5. **Expense Tracker (React)** — React expense tracker with filters. Stack: React. Demonstrates React hooks.
@@ -44,7 +44,7 @@ export const KNOWLEDGE_BASE = `
 7. **Say No To Drugs** — Awareness website. Stack: HTML, CSS. Live at: https://say-no-to-drug-abuse.vercel.app/
 8. **Facebook Clone** — Social media app with login and posting. Stack: React, FastAPI, MySQL.
 9. **Nigerian State App** — CRUD app for managing Nigerian states. Stack: React Router, FastAPI, MySQL.
-10. **Profile Card (Tailwind)** — Reusable UI component. Stack: TailwindCSS.
+10. **TechVault VEGA** — Agentic RAG multilingual customer support chatbot. Stack: React, FastAPI, Google Gemini, FAISS. Supports 6 languages with voice input and order tracking.
 
 ## Experience & Background
 - 2+ years of development experience

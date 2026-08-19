@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -11,7 +12,6 @@ import Projects from "./pages/Projects";
 import Admin from "./pages/Admin";
 import ChatbotWidget from "./components/ChatbotWidget";
 
-// Silently wake the backend on app load so it's ready when needed
 const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 function useWakeBackend() {
   useEffect(() => {
@@ -24,6 +24,7 @@ function App() {
 
   return (
     <Router>
+      <SpeedInsights />
       <Navbar />
 
       <Routes>

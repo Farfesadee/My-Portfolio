@@ -18,24 +18,6 @@ export default function Contact() {
       longitude: null,
     };
 
-    // Try to get user's location
-    if (navigator.geolocation) {
-      try {
-        await new Promise((resolve) => {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              data.latitude = position.coords.latitude;
-              data.longitude = position.coords.longitude;
-              resolve();
-            },
-            () => resolve() // user denied or unavailable
-          );
-        });
-      } catch (err) {
-        console.warn("Geolocation error:", err);
-      }
-    }
-
     try {
       const response = await fetch(`${apiBaseUrl}/contact`, {
         method: "POST",
@@ -59,10 +41,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">Contact</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+        <h2 className="text-4xl font-bold text-white mb-6">Contact</h2>
+        <p className="text-gray-400 max-w-2xl mx-auto mb-10">
           Interested in a project, collaboration, or just want to say hello?
           You can reach me via email, phone, WhatsApp, or through the form below.
         </p>
@@ -77,39 +59,39 @@ export default function Contact() {
             name="name"
             required
             placeholder="Your Name"
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+            className="w-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 transition-colors"
           />
           <input
             type="email"
             name="email"
             required
             placeholder="Your Email"
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+            className="w-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 transition-colors"
           />
           <textarea
             name="message"
             rows="5"
             required
             placeholder="Your Message"
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 resize-none"
+            className="w-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 transition-colors resize-none"
           />
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold cursor-pointer disabled:opacity-60"
+            className="w-full bg-green-500 hover:bg-green-400 text-gray-900 font-semibold py-3 rounded-xl transition-all shadow-lg shadow-green-500/25 cursor-pointer disabled:opacity-60"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
 
         {/* Contact Details */}
-        <div className="mt-16 space-y-5 text-lg text-gray-700">
+        <div className="mt-16 space-y-5 text-lg text-gray-300">
 
           {/* Phone */}
           <div className="flex justify-center items-center gap-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-gray-900"
+              className="w-6 h-6 text-green-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -119,7 +101,7 @@ export default function Contact() {
                 d="M3 5l2-2 4 4-2 2a12 12 0 006 6l2-2 4 4-2 2c-3.2 1.4-11-6.4-12.4-9.6z"
               />
             </svg>
-            <a href="tel:+2348101143265" className="hover:underline">
+            <a href="tel:+2348101143265" className="hover:text-green-400 hover:underline">
               +234 810 114 3265
             </a>
           </div>
@@ -128,7 +110,7 @@ export default function Contact() {
           <div className="flex justify-center items-center gap-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-7 h-7 text-green-600"
+              className="w-7 h-7 text-green-400"
               viewBox="0 0 32 32"
               fill="currentColor"
             >
@@ -138,7 +120,7 @@ export default function Contact() {
               href="https://wa.me/2348101143265"
               target="_blank"
               rel="noreferrer"
-              className="hover:underline text-gray-800"
+              className="hover:text-green-400 hover:underline"
             >
               WhatsApp Chat
             </a>
@@ -153,7 +135,7 @@ export default function Contact() {
             href="https://github.com/Farfesadee?tab=repositories"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-700 hover:text-gray-900 transition"
+            className="text-gray-400 hover:text-white transition"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 008 11c.6.1.8-.2.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.7.8 1.7.8 2 .3 3.4-.7 3.4-.7-.1-.8-.2-1.4-.2-1.4-2.3-.3-4.7-1.2-4.7-5.4 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 1.1a9.6 9.6 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.2-2.4 5.1-4.7 5.4 0 .1-.1.7-.2 1.4 0 0 1.4 1 3.4.7 0 0 .7-.7 1.7-.8 0 0 .6-1 1.7-1.1 0 0 1.1 0 .1.7 0 0-.7.4-1.2 1.6 0 0-.7 2.3-4 1.6v2c0 .4.2.7.8.6a11.5 11.5 0 008-11C23.5 5.7 18.3.5 12 .5z" />
@@ -165,7 +147,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/omodolapo-odushile-8a9494383"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-700 hover:text-gray-900 transition"
+            className="text-gray-400 hover:text-blue-400 transition"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
               <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 7h4V24h-4V7zm7 0h4v2.4h.1c.6-1.2 2-2.4 4.2-2.4 4.5 0 5.3 3 5.3 6.9V24h-4V14.4c0-2.3 0-5.3-3.2-5.3-3.2 0-3.7 2.5-3.7 5.1V24h-4V7z" />

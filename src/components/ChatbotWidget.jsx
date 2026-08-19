@@ -92,7 +92,7 @@ export default function ChatbotWidget() {
     },
   ]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [, setError] = useState("");
   const [showStarters, setShowStarters] = useState(true);
 
   const { projects } = useProjects();
@@ -154,12 +154,16 @@ export default function ChatbotWidget() {
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch (err) {
       console.error("Chat error:", err);
-      setError("Something went wrong. Please try again.");
+      const isOffline = err instanceof TypeError && err.message.includes("fetch");
+      const errMsg = isOffline
+        ? "⚠️ I can't reach the server right now. The backend may be offline — please try again shortly or contact Omodolapo directly via the Contact page."
+        : "Sorry, I ran into an issue. You can also reach Omodolapo directly via the Contact page.";
+      setError(isOffline ? "Backend offline" : "Something went wrong. Please try again.");
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "Sorry, I ran into an issue. You can also reach Omodolapo directly via the Contact page.",
+          content: errMsg,
         },
       ]);
     } finally {
